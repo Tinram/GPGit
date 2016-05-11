@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# gpgpit - Linux bash script to strengthen the symmetric encryption of a file by GnuPG
+#
+# Usage:      gpgit <filename>
+# Author:     Martin Latter, 23/03/2016
+# Version:    0.1
+# License:    GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
+# Link:       https://github.com/Tinram/GPGit.git
+
+
+if [ $# -ne 1 ]; then
+    echo "usage: gpgit <filename>"
+    exit 1
+fi
+
+filename="$1"
+
+gpg -c --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo SHA512 --cipher-algo AES256 $filename
