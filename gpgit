@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# gpgpit - Linux bash script to strengthen the symmetric encryption of a file by GnuPG
+# GPGit - Linux bash script to strengthen the symmetric encryption of a file by GnuPG
 #
 # Usage:      gpgit <filename>
 # Author:     Martin Latter, 23/03/2016

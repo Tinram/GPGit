@@ -1,7 +1,7 @@
 
 @echo off
 
-REM gpgit - Windows batch script to strengthen the symmetric encryption of a file by GnuPG
+REM GPGit - Windows batch script to strengthen the symmetric encryption of a file by GnuPG
 REM
 REM Usage:      gpgit <filename>
 REM Author:     Martin Latter, 23/03/2016
