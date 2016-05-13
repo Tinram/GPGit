@@ -4,11 +4,13 @@
 
 ## Purpose
 
-#### Symmetrically encrypt a file with GNU Privacy Guard (GPG) using the strongest encryption and key-strengthening options offered by GPG.
+#### Encrypt a file with GNU Privacy Guard (GPG) using the strongest cipher and key-strengthening options offered by GPG.
 
-The GPG symmetric file encryption defaults (CAST, SHA-1) are weak compared to other GPG options available.
+The GPG symmetric file encryption defaults (CAST5 and SHA-1 on older GPG versions) are weak compared to other options available.
 
-However, the command-line options to enable the stronger options are verbose and not easily-remembered.
+However, the command-line switches to enable the stronger GPG options are verbose, not easily-remembered, and inconvenient.
+
+GPGit provides a single command to call GPG with its strongest encryption options.
 
 
 ## Requirements
@@ -37,23 +39,29 @@ GPG for Windows is available from websites such as [GPG4Win](https://www.gpg4win
 
 **Linux:**
 
-Move the *gpgit* file to */usr/local/bin*
+As your preferred user:
 
-(or equivalent location available via $PATH)
+`chmod 700 gpgit`
+
+`sudo mv gpgit /usr/local/bin`
+
+(*/usr/local/bin* is an example location; it can be another location in $PATH)
 
 **Windows:**
 
-Move *gpgit.bat* to a suitable directory.  Ensure that directory is in the PATH variable: *Windows/Super key + Break > Advanced tab > Environmental Variables button > click Path line > Edit button > Variable value* - append at the end of existing line info: *C:\directory paths\to gpgit.bat\;*
+Move *gpgit.bat* to a suitable directory.  Ensure that directory is in the PATH variable.  If not add the directory: *Windows/Super key + Break > Advanced tab > Environmental Variables button > click Path line > Edit button > Variable value* - append at the end of existing line info: *C:\directory path\to gpgit.bat\;*
 
 
 ## Usage
 
 `gpgit <filename>`
 
+GPG asks for a passphrase (and confirmation) and then creates an encrypted copy of the original file with the file extension *.gpg*
+
 
 ## Ciphers
 
-The AES256 cipher call used in the GPGit script can be replaced with a range of other ciphers offered by GPG.
+The AES256 cipher call used in GPGit can be replaced with other ciphers offered by GPG.
 
 TWOFISH and CAMELLIA256 are the strongest cipher alternatives to AES256.
 
