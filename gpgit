@@ -16,4 +16,4 @@ fi
 
 filename="$1"
 
-gpg -c --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo SHA512 --cipher-algo AES256 $filename
+gpg -c --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo SHA512 --cipher-algo AES256 "$filename"
