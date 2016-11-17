@@ -64,11 +64,11 @@ GPG asks for a passphrase (and confirmation) and then creates an encrypted copy 
 
 Decrypt the file with `gpg <filename>.gpg`
 
-### Linux: apply cascade encryption
+#### Apply cascade encryption
 
 `gpgit <filename> -c`
 
-GPG asks for two passphrases (passphrase 1, confirmation; passphrase 2, confirmation), and creates two files. The file with the double extension *.gpg.gpg* is the cascade-encrypted file.
+GPG asks for two passphrases (passphrase one, confirmation; passphrase two, confirmation), and creates two files. The file with the double extension *.gpg.gpg* is the cascade-encrypted file.
 
 ( Two steps of decryption will be required, e.g. for *secret.txt.gpg.gpg* -- `gpg secret.txt.gpg.gpg` then `gpg secret.txt.gpg` resulting in *secret.txt* )
 
