@@ -91,6 +91,51 @@ The default AES256 cipher call used in GPGit can be replaced with other ciphers 
 TWOFISH and CAMELLIA256 are the strongest cipher alternatives to AES256.
 
 
+## GPG / GPGit File Comparisons
+
+    gpg --version
+    gpg (GnuPG) 1.4.20
+    Copyright (C) 2015 Free Software Foundation, Inc.
+
+        pgpdump default.txt.gpg
+
+            Sym alg - AES with 128-bit key(sym 7)
+            Iterated and salted string-to-key(s2k 3):
+            Hash alg - SHA1(hash 2)
+            Salt - 8f c8 6b 9a b0 b8 c2 10
+            Count - 65536(coded count 96)
+
+        pgpdump gpgit.txt.gpg
+
+            Sym alg - AES with 256-bit key(sym 9)
+            Iterated and salted string-to-key(s2k 3):
+            Hash alg - SHA512(hash 10)
+            Salt - a6 60 04 ad f3 e8 09 43
+            Count - 65011712(coded count 255)
+
+
+    gpg2 --version
+    gpg (GnuPG) 2.1.11
+    libgcrypt 1.6.5
+    Copyright (C) 2016 Free Software Foundation, Inc.
+
+        pgpdump default2.txt.gpg
+
+            Sym alg - AES with 128-bit key(sym 7)
+            Iterated and salted string-to-key(s2k 3):
+            Hash alg - SHA1(hash 2)
+            Salt - 9c 2f ca 1f 9e 19 e5 eb
+            Count - 31457280(coded count 238)
+
+        pgpdump gpgit2.txt.gpg
+
+            Sym alg - AES with 256-bit key(sym 9)
+            Iterated and salted string-to-key(s2k 3):
+            Hash alg - SHA512(hash 10)
+            Salt - 31 13 57 9c 49 54 d2 f8
+            Count - 65011712(coded count 255)
+
+
 ## License
 
 GPGit is released under the [GPL v.3](https://www.gnu.org/licenses/gpl-3.0.html).
