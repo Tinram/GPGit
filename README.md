@@ -8,18 +8,18 @@
 
 Encrypt a file with *GNU Privacy Guard (GPG)* using the strongest cipher and key-strengthening options offered by GPG.
 
-The GPG symmetric file encryption defaults (CAST5 and SHA-1 on older GPG versions) are weak choices compared to other options available.
+The default GPG symmetric file encryption settings (CAST5 and SHA-1 on older GPG versions) are weaker choices compared to other options available.
 
 And the command-line switches to enable the stronger GPG options are verbose, not easily-remembered, and inconvenient.
 
-The GPGit script provides a single command to call GPG with its strongest file encryption options.
+GPGit provides a single command to call GPG with its strongest file encryption options.
 
 
 ## Requirements
 
 + GPG installed.
 
-+ GPGit script placed in a $PATH directory.
++ GPGit script placed in a directory location in *$PATH*.
 
 GPG is present by default on most Linux distros (`whereis gpg` or `whereis gpg2`), else it is available from the distro repos.
 
@@ -49,7 +49,7 @@ As your preferred user:
 
         sudo mv gpgit /usr/local/bin
 
-*/usr/local/bin* is just an example $PATH location
+*/usr/local/bin* is just an example of a *$PATH* location.
 
 ### Windows
 
@@ -74,7 +74,7 @@ Decrypt the encrypted file with:
 
 GPG asks for two passphrases (passphrase one, confirmation; passphrase two, confirmation), and creates two files. The file with the double extension *.gpg.gpg* is the cascade-encrypted file.
 
-Two steps of decryption will be required, e.g. for *secret.txt.gpg.gpg*:
+Two steps of decryption will be required, e.g. for *secret.txt.gpg.gpg*
 
         gpg secret.txt.gpg.gpg
 then
