@@ -1,33 +1,36 @@
 #!/bin/bash
 
-# GPGit - Linux bash script to strengthen the symmetric encryption of a file by GnuPG.
+# GPGit
+#
+# Linux bash script to strengthen symmetric file encryption by GnuPG.
 #
 # Usage:      gpgit <filename> [-c]
 #
 #                 -c to apply cascade encryption
 #
 # Author:     Martin Latter, 23/03/2016, 18/10/2016
-# Version:    0.12
+# Version:    0.13
 # License:    GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
 # Link:       https://github.com/Tinram/GPGit.git
 
 
-if [ $# -lt 1 ] ; then
+if [ "$#" -lt 1 ] || [ "$1" == "-c" ] ; then
     echo "usage: gpgit <filename> [-c]"
     exit 1
 fi
 
 
-filename="$1"
-cascade="$2"
+FILENAME="$1"
+CASCADE="$2"
 
 
 # can use either gpg or gpg2
 # replace 'gpg' with 'gpg2' below if gpg2 is available
-gpg -c --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo SHA512 --cipher-algo AES256 "$filename"
+gpg -c --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo SHA512 --cipher-algo AES256 --require-secmem -z 9 "$FILENAME"
 
 
 # cascade encryption: two passphrases required, take the resulting <filename>.gpg.gpg file
-if [ "$cascade" == "-c" ]; then
-    gpg -c --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo SHA512 --cipher-algo CAMELLIA256 "$filename.gpg"
+if [ "$CASCADE" == "-c" ]; then
+    echo "applying cascade encryption: second password required ..."
+    gpg -c --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo SHA512 --cipher-algo CAMELLIA256 --require-secmem -z 9 "$FILENAME.gpg"
 fi
