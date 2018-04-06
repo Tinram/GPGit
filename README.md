@@ -23,7 +23,7 @@ GPGit provides a single command to call GPG with its strongest file encryption o
 
 GPG is present by default on most Linux distros (`whereis gpg` or `whereis gpg2`), else it is available from the distro repos.
 
-(GPG2 is to be preferred if it is installed on the machine, as it is more resistant to attack. Replace `gpg` with `gpg2` in the *gpgit* script.)
+(GPG2 is to be preferred, if it is installed on the machine, as it is more resistant to attack. Replace `gpg` with `gpg2` in the *gpgit* script.)
 
 GPG for Windows is available from websites such as [GPG4Win](https://www.gpg4win.org/), or the standalone command-line executable can be extracted from a Git installation.
 
@@ -68,11 +68,11 @@ Decrypt the encrypted file with:
 
         gpg <filename>.gpg
 
-#### Applying Cascade Encryption
+#### Apply Cascade Encryption
 
         gpgit <filename> -c
 
-GPG asks for two passphrases (passphrase one, confirmation; passphrase two, confirmation), and creates two files. The file with the double extension *.gpg.gpg* is the cascade-encrypted file.
+GPG asks for two passphrases (passphrase one, confirmation; gpgit message: *applying cascade encryption [...]*; passphrase two, confirmation), and creates two files. The file with the double extension *.gpg.gpg* is the cascade-encrypted file.
 
 Two steps of decryption will be required, e.g. for *secret.txt.gpg.gpg*
 
