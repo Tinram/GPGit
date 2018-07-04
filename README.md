@@ -53,7 +53,7 @@ As your preferred user:
 
 ### Windows
 
-Move *gpgit.bat* to a suitable directory. Ensure that directory is in the PATH variable. If not add the directory: *Windows/Super key + Break > Advanced tab > Environmental Variables button > click Path line > Edit button > Variable value* - append at the end of existing line info: *C:\directory path\to gpgit.bat\;*
+Move *gpgit.bat* to a suitable directory. Ensure that directory is in the *$PATH* variable. If not add the directory: *Windows/Super key + Break > Advanced tab > Environmental Variables button > click Path line > Edit button > Variable value* - append at the end of existing line info: *C:\directory path\to gpgit.bat\;*
 
 
 ## Usage
