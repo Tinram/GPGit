@@ -32,11 +32,11 @@ GPG for Windows is available from websites such as [GPG4Win](https://www.gpg4win
 
 ### Linux
 
-*gpgit*
++ *gpgit*
 
 ### Windows
 
-*gpgit.bat*
++ *gpgit.bat*
 
 
 ## Set-up
@@ -45,9 +45,13 @@ GPG for Windows is available from websites such as [GPG4Win](https://www.gpg4win
 
 As your preferred user:
 
-        chmod 700 gpgit
+```bash
+    chmod 700 gpgit
+```
 
-        sudo mv gpgit /usr/local/bin
+```bash
+    sudo mv gpgit /usr/local/bin
+```
 
 */usr/local/bin* is just an example of a *$PATH* location.
 
@@ -60,26 +64,37 @@ Move *gpgit.bat* to a suitable directory. Ensure that directory is in the *$PATH
 
 ### Linux and Windows
 
-        gpgit <filename>
+```bash
+    gpgit <filename>
+```
 
 GPG asks for a passphrase (and confirmation) and then creates an encrypted copy of the original file with the file extension *.gpg*
 
 Decrypt the encrypted file with:
 
-        gpg <filename>.gpg
+```bash
+    gpg <filename>.gpg
+```
 
 #### Apply Cascade Encryption
 
-        gpgit <filename> -c
+```bash
+    gpgit <filename> -c
+```
 
 GPG asks for two passphrases (passphrase one, confirmation; gpgit message: *applying cascade encryption [...]*; passphrase two, confirmation), and creates two files. The file with the double extension *.gpg.gpg* is the cascade-encrypted file.
 
 Two steps of decryption will be required, e.g. for *secret.txt.gpg.gpg*
 
-        gpg secret.txt.gpg.gpg
+```bash
+    gpg secret.txt.gpg.gpg
+```
+
 then
 
-        gpg secret.txt.gpg
+```bash
+    gpg secret.txt.gpg
+```
 
 resulting in *secret.txt*
 
