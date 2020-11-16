@@ -103,7 +103,7 @@ resulting in *secret.txt*
 
 The default AES256 cipher call used in GPGit can be replaced with other ciphers offered by GPG.
 
-TWOFISH and CAMELLIA256 are the strongest cipher alternatives to AES256.
+TWOFISH is probably the strongest cipher alternative to AES256.
 
 
 ## GPG / GPGit File Comparisons

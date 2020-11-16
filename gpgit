@@ -9,7 +9,7 @@
 #                 -c to apply cascade encryption
 #
 # Author:     Martin Latter, 23/03/2016, 18/10/2016
-# Version:    0.13
+# Version:    0.14
 # License:    GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
 # Link:       https://github.com/Tinram/GPGit.git
 
@@ -32,5 +32,5 @@ gpg -c --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo SHA512 --cipher-algo 
 # cascade encryption: two passphrases required, take the resulting <filename>.gpg.gpg file
 if [ "$CASCADE" == "-c" ]; then
     echo "applying cascade encryption: second password required ..."
-    gpg -c --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo SHA512 --cipher-algo CAMELLIA256 --require-secmem -z 9 "$FILENAME.gpg"
+    gpg -c --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo SHA512 --cipher-algo TWOFISH --require-secmem -z 9 "$FILENAME.gpg"
 fi
